@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <style>
+        .main {
+        position: relative;
+        margin: 0 auto;
+        text-align: center;
+        border: 1px solid red;
+        width: 520px;
+        height: 520px;
+    }
+
+    .inner {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        /*background-color: red;*/
+        border: 1px solid #999;
+        box-shadow: rgba(0, 0, 0, 0.1);
+        cursor: move;
+    }
+    /*	.inner:hover .shape_controller{
+		display: block;
+	}*/
+
+    .shape_controller {
+        position: absolute;
+        border-style: solid;
+        border-width: 1px;
+        background: white;
+        width: 6px;
+        height: 6px;
+        display: none;
+        border-color: rgb(136, 51, 51);
+    }
+
+    .shape_controller.n.e {
+        cursor: ne-resize;
+    }
+
+    .shape_controller.s.e {
+        cursor: se-resize;
+    }
+
+    .shape_controller.n.w {
+        cursor: nw-resize;
+    }
+
+    .shape_controller.s.w {
+        cursor: sw-resize;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="main">
+	<canvas id="my_canvas" width="520" height="520">您的浏览器太老了！！！</canvas>
+	<div class="inner" style="top:0;left:0">
+		<canvas id="inner_canvas" width="100" height="100">您的浏览器太老了！！！</canvas>
+		<div id="nw" class="shape_controller n w" style="left: -4px; top: -4px;"></div>
+		<div id="sw" class="shape_controller s w" style="left: -4px; bottom: -4px;"></div>
+		<div id="ne" class="shape_controller n e" style="right: -4px; top: -4px;"></div>
+		<div id="se" class="shape_controller s e" style="right: -4px; bottom: -4px;"></div>
+	</div>
+</div> -->
+    <!-- <button id="left_btn">左旋</button> -->
+    <!-- <button id="right_btn">右旋</button> -->
+    <!-- <script src="index.js"></script> -->
+    <p>
+        <button id="cropBeginBtn">图片处理</button>
+    </p>
+    <img src="car.jpg" id="cropTestImg" alt="">
+    <script type="text/javascript" src="./excanvas.js"></script>
+    <script type="text/javascript" src="./crop_rotation.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var oImg = document.getElementById("cropTestImg");
+            document.getElementById("cropBeginBtn").onclick = function () {
+                fnImageCropRot(oImg);
+            };
+        };
+    </script>
+</body>
+
+</html>
